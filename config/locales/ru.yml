@@ -1,4 +1,5 @@
 ru: 
   spree:
     attached_option_types: Опции
-    add_attached_option_types: Добавить опции
+    back_to_attached_option_types: Обратно к списку опций
+    new_attached_option_types: Добавить опции
