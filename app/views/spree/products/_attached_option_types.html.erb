@@ -1,9 +1,11 @@
 <% unless @product.attached_option_types.empty? %>
   <h6 class='product-section-title'><%= Spree.t('attached_option_types') %></h6>
-  <% @product.attached_option_types.each do |attached_option_type| %>
-    <div>
-      <label><%= attached_option_type.presentation %>:&nbsp;</label>
-      <%= select_tag_for_attached_option_type(attached_option_type) %>
-    </div>
-  <% end %>
+  <ul>
+    <% @product.attached_option_types.each do |attached_option_type| %>
+      <li>
+        <label><%= attached_option_type.presentation %>:&nbsp;</label>
+        <%= select_tag_for_attached_option_type(attached_option_type) %>
+      </li>
+    <% end %>
+  </ul>
 <% end %>
