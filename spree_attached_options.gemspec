@@ -1,7 +1,7 @@
 # encoding: UTF-8
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
-  s.name        = 'spree_ad_hoc_options'
+  s.name        = 'spree_attached_options'
   s.version     = '2.0.3'
   s.summary     = 'Add gem summary here'
   s.description = 'Add (optional) gem description here'

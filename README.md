@@ -1,4 +1,4 @@
-SpreeAdHocOptions
+SpreeAttachedOptions
 =================
 
 Introduction goes here.
@@ -6,17 +6,17 @@ Introduction goes here.
 Installation
 ------------
 
-Add spree_ad_hoc_options to your Gemfile:
+Add spree_attached_options to your Gemfile:
 
 ```ruby
-gem 'spree_ad_hoc_options'
+gem 'spree_attached_options'
 ```
 
 Bundle your dependencies and run the installation generator:
 
 ```shell
 bundle
-bundle exec rails g spree_ad_hoc_options:install
+bundle exec rails g spree_attached_options:install
 ```
 
 Testing
@@ -34,7 +34,7 @@ When testing your applications integration with this extension you may use it's 
 Simply add this require statement to your spec_helper:
 
 ```ruby
-require 'spree_ad_hoc_options/factories'
+require 'spree_attached_options/factories'
 ```
 
 Copyright (c) 2013 [name of extension creator], released under the New BSD License
