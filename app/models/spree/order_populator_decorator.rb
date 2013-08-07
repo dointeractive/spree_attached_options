@@ -1,4 +1,4 @@
-module Spree
+﻿module Spree
   OrderPopulator.class_eval do
     def populate(from_hash)
       from_hash[:products].each do |product_id, attrs|
@@ -13,7 +13,7 @@ module Spree
     private 
 
       def get_variant(variant_attrs)
-        Spree::Variant.find(variant_attrs(id))
+        Spree::Variant.find(variant_attrs[:id])
       end
 
       def attempt_cart_add(variant_id, option_value_ids, quantity)
