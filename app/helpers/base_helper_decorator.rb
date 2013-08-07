@@ -1,4 +1,4 @@
-Spree::Admin::OrdersHelper.module_eval do
+Spree::BaseHelper.module_eval do
   def item_name(line_item)
     text = []
     text << variant_options(line_item.variant) unless line_item.variant.option_values.empty?
