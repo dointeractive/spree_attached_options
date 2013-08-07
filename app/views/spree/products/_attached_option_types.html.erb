@@ -1,8 +1,8 @@
 <% unless @product.attached_option_types.empty? %>
   <h6 class='product-section-title'><%= Spree.t('attached_option_types') %></h6>
-  <ul>
+  <ul data-hook="attached-options">
     <% @product.attached_option_types.each do |attached_option_type| %>
-      <li>
+      <li data-hook="attached-option">
         <label><%= attached_option_type.presentation %>:&nbsp;</label>
         <%= select_tag_for_attached_option_type(attached_option_type) %>
       </li>
