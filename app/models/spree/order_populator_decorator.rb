@@ -16,7 +16,7 @@
         Spree::Variant.find(variant_attrs[:id])
       end
 
-      def attempt_cart_add(variant_id, option_value_ids, quantity)
+      def attempt_cart_add(variant, option_value_ids, quantity)
         quantity = quantity.to_i
         # 2,147,483,647 is crazy.
         # See issue #2695.
