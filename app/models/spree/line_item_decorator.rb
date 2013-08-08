@@ -12,11 +12,11 @@ Spree::LineItem.class_eval do
   end
 
   def self.find_by_variant_id_and_option_value_ids(variant_id, option_value_ids)
-    joins(:option_values)
+    select('spree_line_items.*')
+    .joins(:option_values)
     .where(:variant_id => variant_id, :'spree_option_values.id' => option_value_ids)
     .group('spree_line_items.id')
     .having('count(distinct spree_option_values.id) = ?', option_value_ids.size)
-    .readonly(false)
     .first
   end
 
