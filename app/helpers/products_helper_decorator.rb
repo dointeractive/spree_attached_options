@@ -1,7 +1,11 @@
 module Spree
   ProductsHelper.class_eval do
-    def select_tag_for_attached_option_type(attached_option_type, options={})
-      option_values = attached_option_type.option_values.map{ |ov| [ ov.presentation, ov.id ] }
+    def select_tag_for_attached_options(attached_options, options={})
+      option_values = attached_options.map do |attached_option| 
+        option_value = attached_option.option_value
+        [ option_value.presentation, option_value.id ]
+      end.compact
+
       select_tag "products[#{@product.id}][option_value_ids][]", options_for_select(option_values), options
     end
   end
