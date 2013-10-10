@@ -13,30 +13,37 @@
   </ul>
 <% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th><%= Spree.t(:name) %></th>
-      <th><%= Spree.t(:presentation) %></th>
-      <th class='actions'></th>
-    </tr>
-  </thead>
 
-<% @attached_option_types.each do |attached_option_type| %>
-  <tr>
-    <td><%= attached_option_type.name %></td>
-    <td><%= attached_option_type.presentation %></td>
-    <td class="actions">
-      <%= link_to_delete attached_option_type, url: admin_product_attached_option_type_path(@parent, attached_option_type), no_text: true %>
-    </td>
-  </tr>
-<% end %>
-</table>
+<fieldset class="no-border-bottom">
+  <legend class="center"><%= Spree.t :attached_options %></legend>
+  <table>
+    <thead>
+      <tr>
+        <th><%= Spree.t(:name) %></th>
+        <th><%= Spree.t(:presentation) %></th>
+        <th class='actions'></th>
+      </tr>
+    </thead>
 
-<div id="new-attached-options"></div>
+    <% @attached_option_types.each do |attached_option_type| %>
+      <tr>
+        <td><%= attached_option_type.name %></td>
+        <td><%= attached_option_type.presentation %></td>
+        <td class="actions">
+          <%= link_to_delete attached_option_type, url: admin_product_attached_option_type_path(@parent, attached_option_type), no_text: true %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</fieldset>
 
-<div class="field">
-  <%= link_to_with_icon 'icon-plus', Spree.t(:attach_option_value), '#', class: 'attach-option-value button' %>
-</div>
+<fieldset class="no-border-bottom">
+  <legend class="center"><%= Spree.t :new_attached_options %></legend>
+  <div id="new-attached-options"></div>
+
+  <div class="field">
+    <%= link_to_with_icon 'icon-plus', Spree.t(:attach_option_value), '#', class: 'attach-option-value button' %>
+  </div>
+</fieldset>
 
 <%# link_to 'New Attached option type', new_spree_admin_attached_option_type_path %>
