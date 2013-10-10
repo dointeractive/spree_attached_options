@@ -79,14 +79,14 @@ $(function () {
     },
 
     renderOptions: function (data) {
-      var options = { items: data, label: 'Тип' }
+      var options = { items: data, label: Spree.translations.option }
       options['name'] = 'option_' + this.index
       this.$options.html(Select.render(options))
       this.select2(this.$options)
     },
 
     renderValues: function (data) {
-      var options = { items: data, label: 'Значение' }
+      var options = { items: data, label: Spree.translations.value }
       options['name'] = 'master[attached_options_attributes][' + this.index + '][option_value_id]'
       this.$values.html(Select.render(options))
       this.select2(this.$values)

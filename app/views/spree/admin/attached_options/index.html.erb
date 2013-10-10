@@ -2,7 +2,7 @@
 <%= render :partial => 'spree/admin/shared/product_tabs', :locals => {:current => 'Attached Options'} %>
 
 <% content_for :page_title do %>
-  &ndash;&nbsp;<%= Spree.t(:attached_option_types).downcase %>
+  &ndash;&nbsp;<%= Spree.t(:attached_options).downcase %>
 <% end %>
 
 <% if show_attached_options? %>
@@ -11,8 +11,8 @@
     <table>
       <thead>
         <tr>
-          <th><%= Spree.t :name %></th>
-          <th><%= Spree.t :presentation %></th>
+          <th><%= Spree.t :option %></th>
+          <th><%= Spree.t :value %></th>
           <th class='actions'></th>
         </tr>
       </thead>
@@ -46,3 +46,7 @@
     </div>
   </fieldset>
 <% end %>
+
+<script type="text/javascript">
+  Spree.translations.option = "<%= Spree.t :option %>"
+</script>

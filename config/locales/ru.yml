@@ -7,3 +7,4 @@ ru:
     fail_to_create_attached_options: Не удалось прикрепить опции
     new_attached_options: Прикрепите пару опций
     no_attached_options_found: К этому товару не прикреплено никаких опций
+    option: Опция
