@@ -10,9 +10,9 @@ $(function () {
     , $root = $('#new-attached-options')
     , fieldIndex = 0
 
-  $('.attach-option-value').on('click', function (e) {
+  $('.attach-option-value').on('click', function () {
     $root.append(AttachedOptionValue.renderFields())
-    e.preventDefault()
+    return false
   })
 
   function AttachedOptionValue(index) {
@@ -29,11 +29,20 @@ $(function () {
 
   AttachedOptionValue.prototype = {
     initialize: function () {
-      this.$el = $('<div>', { 'class': 'feld row' })
-      this.$options = $('<div>', { 'class': 'four columns alpha'})
+      this.$el = $('<div>', { 'class': 'field row' })
+      this.$options = $('<div>', { 'class': 'four columns alpha' })
       this.$values = $('<div>', { 'class': 'four columns' })
-      this.$remove = $('<div>', { 'class': 'two columns omega' })
-      this.$el.append(this.$options).append(this.$values).append(this.$remove)
+
+      this.$remove = $('<a>', { 
+        href: '#',
+        class: 'button',
+        html: Spree.translations.destroy 
+      }).css({ 'margin-top': '19px' })
+
+      this.$el
+        .append(this.$options)
+        .append(this.$values)
+        .append($('<div>', { 'class': 'two columns omega', html: this.$remove }))
     },
 
     bindEvents: function () {
@@ -41,6 +50,11 @@ $(function () {
       this.$options.on('change', function () {
         var optionId = $('select', this).val()
         self.loadOptionValues(optionId)
+      })
+
+      this.$remove.on('click', function () {
+        $(this).closest('.row').remove()
+        return false
       })
     },
 
