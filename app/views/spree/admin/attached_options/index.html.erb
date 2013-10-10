@@ -37,7 +37,7 @@
     </table>
   </fieldset>
 <% else %>
-  <h2><%= Spree.t :add_attached_options %></h2>
+  <h3 class="no-objects-found"><%= Spree.t :no_attached_options_found %></h3>
 <% end %>
 
 <%= form_tag admin_product_attached_options_path, method: 'post' do %>
