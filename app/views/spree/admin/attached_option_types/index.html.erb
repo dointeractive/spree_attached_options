@@ -33,6 +33,24 @@
 <% end %>
 </table>
 
-<br />
+<div class="row new-attached-options">
+  <div class="field">
+    <div class="four columns alpha">
+      <label for="new_attachment_styles_1_name">Наименование</label>
+      <input id="new_attachment_styles_1_name" name="new_attachment_styles[1][name]" type="text" class="fullwidth"><br>
+    </div>
+    <div class="four columns">
+      <label for="new_attachment_styles_1_value">Значение</label>
+      <input id="new_attachment_styles_1_value" name="new_attachment_styles[1][value]" type="text" class="fullwidth">
+    </div>
+    <div class="two columns omega">
+      <a href="#" title="Удалить" class="destroy_new_attachment_styles with-tip button" style="margin-top: 19px;"><i class="icon-trash"></i> &nbsp; Удалить</a>
+    </div>
+  </div>
+</div>
+
+<div class="field">
+  <%= link_to_with_icon 'icon-plus', Spree.t(:attach_option_value), '#', class: 'add_new_option_value button' %>
+</div>
 
 <%# link_to 'New Attached option type', new_spree_admin_attached_option_type_path %>
