@@ -1,16 +1,8 @@
 <%= render :partial => 'spree/admin/shared/product_sub_menu' %>
-<%= render :partial => 'spree/admin/shared/product_tabs', :locals => {:current => 'Ad Hoc Option Types'} %>
+<%= render :partial => 'spree/admin/shared/product_tabs', :locals => {:current => 'Attached Options'} %>
 
 <% content_for :page_title do %>
   &ndash;&nbsp;<%= Spree.t(:attached_option_types).downcase %>
-<% end %>
-
-<% content_for :page_actions do %>
-  <ul class="tollbar inline-menu">
-    <li>
-      <%# button_link_to Spree.t(:new_attached_option_types), new_admin_product_attached_option_type_path(@parent), :icon => 'icon-plus' %>
-    </li>
-  </ul>
 <% end %>
 
 <% if show_attached_options? %>
