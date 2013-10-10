@@ -73,7 +73,7 @@ $(function () {
 
     renderValues: function (data) {
       var options = { items: data, label: 'Значение' }
-      options['name'] = 'values_' + this.index
+      options['name'] = 'master[attached_options_attributes][' + this.index + '][option_value_id]'
       this.$values.html(Select.render(options))
       this.select2(this.$values)
     },

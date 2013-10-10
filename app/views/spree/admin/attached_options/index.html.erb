@@ -1,0 +1,56 @@
+<%= render :partial => 'spree/admin/shared/product_sub_menu' %>
+<%= render :partial => 'spree/admin/shared/product_tabs', :locals => {:current => 'Ad Hoc Option Types'} %>
+
+<% content_for :page_title do %>
+  &ndash;&nbsp;<%= Spree.t(:attached_option_types).downcase %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <ul class="tollbar inline-menu">
+    <li>
+      <%# button_link_to Spree.t(:new_attached_option_types), new_admin_product_attached_option_type_path(@parent), :icon => 'icon-plus' %>
+    </li>
+  </ul>
+<% end %>
+
+<% if show_attached_options? %>
+  <fieldset class="no-border-bottom">
+    <legend class="center"><%= Spree.t :attached_options %></legend>
+    <table>
+      <thead>
+        <tr>
+          <th><%= Spree.t :name %></th>
+          <th><%= Spree.t :presentation %></th>
+          <th class='actions'></th>
+        </tr>
+      </thead>
+
+      <% @product.master_attached_options.each do |attached_option| %>
+        <tr>
+          <td><%= attached_option.name %></td>
+          <td><%= attached_option.value %></td>
+          <td class="actions">
+            <%= link_to_delete attached_option, url: admin_product_attached_option_path(@product, attached_option), no_text: true %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </fieldset>
+<% else %>
+  <h2><%= Spree.t :add_attached_options %></h2>
+<% end %>
+
+<%= form_tag admin_product_attached_options_path, method: 'post' do %>
+  <fieldset>
+    <legend class="center"><%= Spree.t :new_attached_options %></legend>
+    <div id="new-attached-options"></div>
+
+    <div class="field">
+      <%= link_to_with_icon 'icon-plus', Spree.t(:attach_option_value), '#', class: 'attach-option-value button' %>
+    </div>
+
+    <div class="form-buttons filter-actions actions">
+      <button class="icon-refresh button"><%= Spree.t :change %></button>
+    </div>
+  </fieldset>
+<% end %>
