@@ -1,0 +1,12 @@
+<% unless @product.master_attached_options.empty? %>
+  <h6 class='product-section-title'><%= Spree.t :options %></h6>
+  <ul data-hook="attached-options">
+    <% options_hash = @product.group_attached_options_by_option_type %>
+    <% options_hash.each do |option_type, attached_options| %>
+      <li class="row" data-hook="attached-option">
+        <label class="two columns"><%= option_type.presentation %>:&nbsp;</label>
+        <%= select_tag_for_attached_options attached_options, class: "three columns" %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
