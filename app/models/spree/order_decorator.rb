@@ -1,4 +1,8 @@
 Spree::Order.class_eval do
+  def find_line_items_by_variant(variant)
+    line_items.select{ |line_item| line_item.variant_id == variant.id }
+  end
+
   def merge!(order)
     order.line_items.each do |line_item|
       next unless line_item.currency == currency
