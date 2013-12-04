@@ -10,5 +10,6 @@ Spree::OrderContents.class_eval do
         line_item.option_values << option_value
       end
     end
+    line_item
   end
 end
