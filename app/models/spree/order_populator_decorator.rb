@@ -33,13 +33,15 @@
         variant = get_variant(product_id)
 
         if quantity > 0
-          if check_stock_levels(variant, quantity)
-            option_value_ids = get_option_value_ids(product_id)
-            if option_value_ids
-              @order.contents.add_with_option_values(variant, option_value_ids, quantity, currency)
-            else
-              @order.contents.add(variant, quantity, currency)
-            end
+          if option_value_ids = get_option_value_ids(product_id)
+            line_item = @order.contents.add_with_option_values(variant, option_value_ids, quantity, currency)
+          else
+            line_item = @order.contents.add(variant, quantity, currency)
+          end
+
+          unless line_item.valid?
+            errors.add(:base, line_item.errors.messages.values.join(" "))
+            return false
           end
         end
       end
