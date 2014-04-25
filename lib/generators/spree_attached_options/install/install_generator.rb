@@ -5,7 +5,7 @@ module SpreeAttachedOptions
       class_option :auto_run_migrations, :type => :boolean, :default => false
 
       def add_javascripts
-        append_file 'app/assets/javascripts/admin/all.js', "//= require admin/spree_attached_options\n"
+        append_file 'vendor/assets/javascripts/spree/backend/all.js', "//= require spree/backend/spree_attached_options\n"
       end
 
       def add_migrations

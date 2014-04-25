@@ -1,4 +1,4 @@
-//= require admin/spree_backend
+//= require spree/backend
 
 $(function () {
   'use strict';
@@ -33,10 +33,10 @@ $(function () {
       this.$options = $('<div>', { 'class': 'four columns alpha' })
       this.$values = $('<div>', { 'class': 'four columns' })
 
-      this.$remove = $('<a>', { 
+      this.$remove = $('<a>', {
         href: '#',
         class: 'button',
-        html: Spree.translations.destroy 
+        html: Spree.translations.destroy
       }).css({ 'margin-top': '19px' })
 
       this.$el
@@ -62,7 +62,7 @@ $(function () {
       OptionType.load().done($.proxy(function (data) {
           this.renderOptions(data)
           this.loadOptionValues(data[0].id)
-        }, this) 
+        }, this)
       )
     },
 
@@ -70,7 +70,7 @@ $(function () {
       OptionValue
         .load({ id: id })
         .done($.proxy(function(data) {
-            this.renderValues(data) 
+            this.renderValues(data)
           }, this))
     },
 
@@ -136,7 +136,7 @@ $(function () {
         return '/api/option_types'
       }
   }, Api)
-  
+
   OptionValue = _.extend({
       getUrl: function (params) {
         return '/api/option_types/' + params.id + '/option_values'
@@ -147,7 +147,7 @@ $(function () {
     render: function (options) {
       var html = this.html()
         , template = this.template(html)
-      
+
       return template(options)
     },
 
