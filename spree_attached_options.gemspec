@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.version     = '2.2.1'
   s.summary     = 'Add gem summary here'
   s.description = 'Add (optional) gem description here'
-  s.required_ruby_version = '>= 1.9.3'
+  s.required_ruby_version = '>= 2.1.1'
 
   s.author    = 'oleglitvin'
   # s.email     = 'you@example.com'
