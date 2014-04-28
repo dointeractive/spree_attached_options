@@ -37,7 +37,7 @@ $(function () {
         href: '#',
         class: 'button',
         html: Spree.translations.destroy
-      }).css({ 'margin-top': '19px' })
+      }).css({ 'margin-top': '16px' })
 
       this.$el
         .append(this.$options)

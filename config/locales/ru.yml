@@ -1,9 +1,8 @@
-ru: 
+ru:
   spree:
     attach_option_value: Прикрепить опцию
     attached_option_types: Опции
     attached_options: Прикрепленные опции
-    back_to_attached_option_types: Обратно к списку опций
     fail_to_create_attached_options: Не удалось прикрепить опции
     new_attached_options: Прикрепите пару опций
     no_attached_options_found: К этому товару не прикреплено никаких опций
