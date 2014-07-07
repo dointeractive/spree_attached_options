@@ -1,5 +1,9 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  spree:
+    attach_option_value: Add option value
+    attached_option_types: Options
+    attached_options: Attached options
+    fail_to_create_attached_options: Fail to create attached options
+    new_attached_options: Add attached option
+    no_attached_options_found: No attached options found
+    option: Option
