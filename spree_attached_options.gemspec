@@ -7,14 +7,14 @@ Gem::Specification.new do |s|
   s.description = 'Add (optional) gem description here'
   s.required_ruby_version = '>= 2.1.1'
 
-  s.author    = 'oleglitvin'
-  # s.email     = 'you@example.com'
-  # s.homepage  = 'http://www.spreecommerce.com'
+  s.author    = 'Oleg Litvin'
+  s.email     = 'oleg@dointeractive.ru'
+  s.homepage  = 'http://dointeractive.ru'
 
   #s.files       = `git ls-files`.split("\n")
   #s.test_files  = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.add_dependency 'spree_core', '~> 2.2.1'
+  s.add_dependency 'spree_core', '~> 2.2'
 end
