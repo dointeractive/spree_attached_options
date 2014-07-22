@@ -20,8 +20,10 @@ Spree::LineItem.class_eval do
   end
 
   def options_text
-    values = self.option_values.includes(:option_type)
-    values.map!{ |v| "#{v.option_type.presentation}: #{v.presentation}" }
+    values = self.option_values.includes(:option_type).map do |option_value|
+      "#{option_value.option_type.presentation}: #{option_value.presentation}"
+    end
+
     values.to_sentence(words_connector: ', ', two_words_connector: ', ')
   end
 end
