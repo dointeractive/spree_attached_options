@@ -12,16 +12,16 @@ Master branch is compatible with spree-2-2
 This extension adds menu item to the "Product edit view" and displays attached options in "Order edit view".
 In "Product edit" menu you can add or remove option values.  
 
-![](https://raw.githubusercontent.com/dointeractive/spree_attached_options/spree-2-2/doc/backend_01.png)
+![](https://raw.githubusercontent.com/dointeractive/spree_attached_options/master/doc/backend_01.png)
 
 
 In "Order edit" menu you can see which options customer chose when ordered a product.  
-![](https://raw.githubusercontent.com/dointeractive/spree_attached_options/spree-2-2/doc/backend_02.png)
+![](https://raw.githubusercontent.com/dointeractive/spree_attached_options/master/doc/backend_02.png)
 
 ## Frontend interface
 
 "Options" block is added to "Product show view" so customers can order a product with different options.  
-![](https://raw.githubusercontent.com/dointeractive/spree_attached_options/spree-2-2/doc/frontend_01.png)
+![](https://raw.githubusercontent.com/dointeractive/spree_attached_options/master/doc/frontend_01.png)
 
 Installation
 ------------
